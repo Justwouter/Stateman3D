@@ -13,12 +13,21 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "6d4de751-5f97-4575-9443-d9bd98c6f572",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "3D Vector",
-                    "id": "f93a79a7-7c00-4a3e-b34f-456f43697067",
+                    "id": "c73b0eee-4079-47a8-b553-27da3859c5bf",
                     "path": "3DVector",
                     "interactions": "",
                     "processors": "",
@@ -29,67 +38,122 @@
                 },
                 {
                     "name": "up",
-                    "id": "0bad876a-5177-4ff9-ae2d-adcc34928be4",
+                    "id": "75983d49-4665-43fb-87a7-27be2126f9e4",
                     "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "c78afb9f-6084-4181-b592-a578095a0baa",
+                    "id": "d0daa643-088c-46d1-a682-616292398904",
                     "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "14d4378a-6736-493e-a644-5ffd91dd599b",
-                    "path": "<Keyboard>/a",
+                    "id": "4db4e941-40f9-40da-8d98-961467a2600b",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "67a1dde8-f6ba-4ba9-bfa8-7eb1ab9f6e05",
-                    "path": "<Keyboard>/d",
+                    "id": "3da4f312-4fbb-473c-afb6-5f8088c92b8c",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "forward",
-                    "id": "d4c6f67c-a068-4606-a7b5-b2464ee20036",
+                    "id": "592bab28-966d-4552-8ce5-20d3000fbe61",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "backward",
-                    "id": "c2501158-82a1-4086-aeeb-bc107cc9be6f",
+                    "id": "ce56d8db-9f7c-4882-8e16-a003d094cb41",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "b181f9ae-0e67-4a9b-a762-aa99aa49f2fe",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "96e5020f-ec98-4b47-8915-eb63c3bea439",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "745a5994-c239-4ac7-a8a6-872d12f68270",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "7f73c500-2e40-4fcd-8386-3878c460bae9",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "32456814-c208-4d99-818e-70de6ecdca16",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
@@ -103,6 +167,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
