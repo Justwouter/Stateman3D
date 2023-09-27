@@ -651,7 +651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _rotationSpeed: 0
+  _rotationSpeed: 10
+  _jumpHight: 10
 --- !u!114 &456675210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +709,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456675208}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1251,7 +1252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843282971}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22926722, y: 0.000000016748057, z: -0.0000000039448578, w: 0.9733635}
+  m_LocalRotation: {x: 0.22926722, y: -0.00000001674807, z: 0.000000003944861, w: 0.9733635}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
