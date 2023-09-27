@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour {
     void Update() {
         transform.Translate(_speed * Time.deltaTime * _movement);
         transform.Rotate(_rotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
-        CheckInAir();
     }
 
     void OnMove(InputValue inputValue) {
@@ -44,10 +43,6 @@ public class PlayerMovement : MonoBehaviour {
             _isJumping = true;
             _rb.AddForce(new Vector3(0, _jumpHight, 0), ForceMode.Impulse);
         }
-    }
-
-    void CheckInAir() {
-        Debug.DrawRay(transform.position, new Vector3(0,100,0), Color.red);
     }
 
 
