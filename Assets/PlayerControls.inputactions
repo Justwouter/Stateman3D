@@ -190,7 +190,7 @@
                     "name": "",
                     "id": "18aab0bb-de4c-499c-9e8a-816d1b457138",
                     "path": "<Keyboard>/ctrl",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Sprint",

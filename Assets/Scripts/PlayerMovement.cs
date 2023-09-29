@@ -8,9 +8,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
     Vector3 _movement = Vector3.zero;
-    [SerializeField] float _speed = 10f;
-    [SerializeField] float _rotationSpeed = 100f;
-    [SerializeField] float _jumpHight = 10f;
+    [SerializeField] public float Speed = 10f;
+    [SerializeField] public float RotationSpeed = 100f;
+    [SerializeField] public float JumpHight = 10f;
     private float _rotationDirection = 0f;
     private Rigidbody _rb;
 
@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.Translate(_speed * Time.deltaTime * _movement);
-        transform.Rotate(_rotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
+        transform.Translate(Speed * Time.deltaTime * _movement);
+        transform.Rotate(_rotationDirection * RotationSpeed * Time.deltaTime * Vector3.up);
     }
 
 
