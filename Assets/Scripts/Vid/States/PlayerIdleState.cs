@@ -5,13 +5,16 @@ public class PlayerIdleState : APlayerState {
 
     public override void EnterState(PlayerStateManager psm) {
         psm.StateIndicator.SetText("Idle");
-        psm.Player.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public override void ExitState(PlayerStateManager psm) {}
 
     public override void UpdateState(PlayerStateManager psm) {
-        psm.Player.transform.Rotate(psm.RotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up); //Rotation always works
+        psm.Player.transform.Rotate(psm.RotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
+        if(psm.Movement != Vector3.zero){
+            psm.SwitchState(psm.MoveState);
+        }
+
 
     }
 }

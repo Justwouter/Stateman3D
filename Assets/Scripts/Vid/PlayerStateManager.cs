@@ -10,6 +10,7 @@ public class PlayerStateManager : MonoBehaviour {
 
     public GameObject Player;
     public TextMeshProUGUI StateIndicator;
+    public APlayerState PreviousState;
     public APlayerState _currentState; //public for test remove in prod
     public PlayerIdleState IdleState = new();
     public PlayerMoveState MoveState = new();
@@ -17,8 +18,8 @@ public class PlayerStateManager : MonoBehaviour {
     public PlayerSprintState SprintState = new();
 
     public Vector3 Movement = Vector3.zero;
-    public float JumpHight = 10f;
     public float RotationDirection = 0f;
+    public float MovementSpeed = 0f;
 
 
 
@@ -33,7 +34,8 @@ public class PlayerStateManager : MonoBehaviour {
 
     }
 
-    public void SwitchState(APlayerState state){
+    public void SwitchState(APlayerState state) {
+        _currentState.ExitState(this);
         _currentState = state;
         state.EnterState(this);
     }
@@ -46,13 +48,19 @@ public class PlayerStateManager : MonoBehaviour {
     }
     void OnMove(InputValue inputValue) {
         Movement = inputValue.Get<Vector3>();
-        SwitchState(MoveState);
     }
 
     void OnSprint(InputValue inputValue) {
-        if(_currentState == MoveState){
+        if (_currentState == MoveState) {
             SwitchState(SprintState);
         }
+        else if(_currentState == SprintState){
+            SwitchState(MoveState);
+        }
+    }
+
+    void OnJump(InputValue inputValue) {
+        Movement = Vector3.up;
     }
 
 

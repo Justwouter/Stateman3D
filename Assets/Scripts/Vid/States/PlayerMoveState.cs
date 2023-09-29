@@ -13,5 +13,8 @@ public class PlayerMoveState : APlayerState {
         if(psm.Movement == Vector3.zero){
             psm.SwitchState(psm.IdleState);
         }
+        else if(psm.Movement.y != 0){
+            psm.SwitchState(psm.JumpState);
+        }
     }
 }
