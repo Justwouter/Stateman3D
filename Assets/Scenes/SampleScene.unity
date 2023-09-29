@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _rotationSpeed: 10
+  _rotationSpeed: 100
   _jumpHight: 10
 --- !u!114 &456675210
 MonoBehaviour:
