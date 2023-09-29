@@ -1,0 +1,13 @@
+using System;
+
+public abstract class AState {
+    private string _name;
+    private float _movementSpeed;
+    
+    public abstract void OnUpdate();
+
+    public abstract string GetName();
+    public abstract float GetSpeed();
+    
+    
+}

@@ -26,37 +26,27 @@ public class PlayerMovement : MonoBehaviour {
         transform.Rotate(_rotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
     }
 
+
+    // Movement stuff
+
     void OnMove(InputValue inputValue) {
         _movement = inputValue.Get<Vector3>();
     }
 
     void OnRotate(InputValue inputValue) {
         _rotationDirection = inputValue.Get<Vector2>().x;
-
     }
 
 
-    // State 2, Jumping
-    private bool _isJumping = false;
-    void OnJump(InputValue inputValue) {
-        if (!_isJumping) {
-            _isJumping = true;
-            _rb.AddForce(new Vector3(0, _jumpHight, 0), ForceMode.Impulse);
-        }
-    }
-
-
-
-
-    // State 1, Sprinting
-    private bool _isSprinting = false;
-    public void OnSprint(InputValue inputValue) {
-        _isSprinting = !_isSprinting;
-        if (_isSprinting) {
-            _speed += 5;
-        }
-        else {
-            _speed -= 5;
-        }
-    }
+    // // State 1, Sprinting
+    // private bool _isSprinting = false;
+    // public void OnSprint(InputValue inputValue) {
+    //     _isSprinting = !_isSprinting;
+    //     if (_isSprinting) {
+    //         _speed += 5;
+    //     }
+    //     else {
+    //         _speed -= 5;
+    //     }
+    // }
 }
