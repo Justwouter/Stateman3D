@@ -7,11 +7,11 @@ public class PlayerIdleState : APlayerState {
         psm.StateIndicator.SetText("Idle");
     }
 
-    public override void ExitState(PlayerStateManager psm) {}
+    public override void ExitState(PlayerStateManager psm) { }
 
     public override void UpdateState(PlayerStateManager psm) {
         psm.Player.transform.Rotate(psm.RotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
-        if(psm.Movement != Vector3.zero){
+        if (psm.Movement != Vector3.zero) {
             psm.SwitchState(psm.MoveState);
         }
 

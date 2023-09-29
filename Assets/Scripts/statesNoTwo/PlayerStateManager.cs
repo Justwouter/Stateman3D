@@ -54,7 +54,7 @@ public class PlayerStateManager : MonoBehaviour {
         if (_currentState == MoveState) {
             SwitchState(SprintState);
         }
-        else if(_currentState == SprintState){
+        else if (_currentState == SprintState) {
             SwitchState(MoveState);
         }
     }

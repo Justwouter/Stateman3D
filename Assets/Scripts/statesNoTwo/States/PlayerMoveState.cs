@@ -6,14 +6,14 @@ public class PlayerMoveState : APlayerState {
         psm.StateIndicator.SetText("Move");
     }
 
-    public override void ExitState(PlayerStateManager psm) {}
+    public override void ExitState(PlayerStateManager psm) { }
 
     public override void UpdateState(PlayerStateManager psm) {
         psm.Player.transform.Translate(_movementSpeed * Time.deltaTime * psm.Movement);
-        if(psm.Movement == Vector3.zero){
+        if (psm.Movement == Vector3.zero) {
             psm.SwitchState(psm.IdleState);
         }
-        else if(psm.Movement.y != 0){
+        else if (psm.Movement.y != 0) {
             psm.SwitchState(psm.JumpState);
         }
     }
