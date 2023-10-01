@@ -1,18 +1,20 @@
 using UnityEngine;
 
 public class PlayerJumpState : APlayerState {
-    public float JumpHight = 100f;
 
-    public override void EnterState(PlayerStateManager psm) {
+    public PlayerJumpState(PlayerStateManager psm) : base(psm) { }
+    public float JumpHight = 10f;
+
+    public override void EnterState() {
         psm.StateIndicator.SetText("Jump");
         psm.Player.GetComponent<Rigidbody>().AddForce(Vector3.up * JumpHight, ForceMode.Impulse);
     }
 
-    public override void ExitState(PlayerStateManager psm) {
+    public override void ExitState() {
         psm.Movement.y = 0;
-    }
+    }   
 
-    public override void UpdateState(PlayerStateManager psm) {
+    public override void UpdateState() {
         psm.Player.transform.Translate(10 * Time.deltaTime * new Vector3(psm.Movement.x, 0, psm.Movement.z));
         if (HasHitGround(psm)) {
             if (psm.Movement == Vector3.zero) {
@@ -22,19 +24,22 @@ public class PlayerJumpState : APlayerState {
                 psm.SwitchState(psm.MoveState);
             }
         }
+        
 
     }
 
     public bool HasHitGround(PlayerStateManager psm) {
-        // Ray ray = new(psm.Player.transform.position, new Vector3(0,-10,0));
-        // Debug.DrawRay(psm.Player.transform.position, new Vector3(0,-10,0), Color.blue);
+        Debug.DrawRay(psm.Player.transform.position, Vector3.down * 1f, Color.green);
+        Ray ray = new(psm.Player.transform.position, Vector3.down);
 
-        // if(Physics.Raycast(ray, out _, -Mathf.Infinity)){
-        //     Debug.Log("Hit!");
-        //     return true;
-        // }
-        // Debug.Log("noHit");
-        // return false;
-        return psm.Player.GetComponent<Rigidbody>().velocity.y == 0;
+        if (Physics.Raycast(ray, out RaycastHit hit, 1f)) {
+            if (hit.collider.gameObject.transform.parent.name.Contains("Map")) {
+                Debug.DrawRay(psm.Player.transform.position, Vector3.down * 1f, Color.red);
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }
