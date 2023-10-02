@@ -6,19 +6,19 @@ public class PlayerIdleState : APlayerState {
     readonly float _rotationSpeed = 100f;
 
     public override void EnterState() {
-        psm.StateIndicator.SetText("Idle");
+        Psm.StateIndicator.SetText("Idle");
     }
 
     public override void ExitState() { }
 
     public override void UpdateState() {
-        psm.Player.transform.Rotate(psm.RotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
+        Psm.Player.transform.Rotate(Psm.RotationDirection * _rotationSpeed * Time.deltaTime * Vector3.up);
 
         if (MoveAction.triggered) {
-            psm.SwitchState(psm.MoveState);
+            Psm.SwitchState(Psm.MoveState);
         }
         else if (JumpAction.triggered) {
-            psm.SwitchState(psm.JumpState);
+            Psm.SwitchState(Psm.JumpState);
         }
 
     }

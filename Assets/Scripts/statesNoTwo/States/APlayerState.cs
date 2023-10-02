@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public abstract class APlayerState {
-    public PlayerStateManager psm;
+    public PlayerStateManager Psm;
     public InputAction MoveAction;
     public InputAction RotateAction;
     public InputAction JumpAction;
@@ -13,7 +13,7 @@ public abstract class APlayerState {
 
 
     public APlayerState(PlayerStateManager psm){
-        this.psm = psm;
+        this.Psm = psm;
 
         MoveAction = psm.PlayerInput.actions["Move"];
         RotateAction = psm.PlayerInput.actions["Rotate"];

@@ -6,15 +6,15 @@ public class PlayerSprintState : APlayerState {
 
     readonly float _movementSpeed = 15f;
     public override void EnterState() {
-        psm.StateIndicator.SetText("Sprint");
+        Psm.StateIndicator.SetText("Sprint");
     }
 
     public override void ExitState() { }
 
     public override void UpdateState() {
-        psm.Player.transform.Translate(_movementSpeed * Time.deltaTime * psm.Movement);
+        Psm.Player.transform.Translate(_movementSpeed * Time.deltaTime * Psm.Movement);
         if(SprintAction.triggered){
-            psm.SwitchState(psm.MoveState);
+            Psm.SwitchState(Psm.MoveState);
         }
     }
 }

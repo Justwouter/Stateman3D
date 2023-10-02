@@ -6,22 +6,22 @@ public class PlayerJumpState : APlayerState {
     public float JumpHight = 10f;
 
     public override void EnterState() {
-        psm.StateIndicator.SetText("Jump");
-        psm.Player.GetComponent<Rigidbody>().AddForce(Vector3.up * JumpHight, ForceMode.Impulse);
+        Psm.StateIndicator.SetText("Jump");
+        Psm.Player.GetComponent<Rigidbody>().AddForce(Vector3.up * JumpHight, ForceMode.Impulse);
     }
 
     public override void ExitState() {
-        psm.Movement.y = 0;
+        Psm.Movement.y = 0;
     }   
 
     public override void UpdateState() {
-        psm.Player.transform.Translate(10 * Time.deltaTime * new Vector3(psm.Movement.x, 0, psm.Movement.z));
-        if (HasHitGround(psm)) {
-            if (psm.Movement == Vector3.zero) {
-                psm.SwitchState(psm.IdleState);
+        Psm.Player.transform.Translate(10 * Time.deltaTime * new Vector3(Psm.Movement.x, 0, Psm.Movement.z));
+        if (HasHitGround(Psm)) {
+            if (Psm.Movement == Vector3.zero) {
+                Psm.SwitchState(Psm.IdleState);
             }
             else {
-                psm.SwitchState(psm.MoveState);
+                Psm.SwitchState(Psm.MoveState);
             }
         }
         

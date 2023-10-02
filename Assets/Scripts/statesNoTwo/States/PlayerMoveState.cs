@@ -6,21 +6,21 @@ public class PlayerMoveState : APlayerState {
 
     readonly float _movementSpeed = 10f;
     public override void EnterState() {
-        psm.StateIndicator.SetText("Move");
+        Psm.StateIndicator.SetText("Move");
     }
 
     public override void ExitState() { }
 
     public override void UpdateState() {
-        psm.Player.transform.Translate(_movementSpeed * Time.deltaTime * psm.Movement);
-        if (psm.Movement == Vector3.zero) {
-            psm.SwitchState(psm.IdleState);
+        Psm.Player.transform.Translate(_movementSpeed * Time.deltaTime * Psm.Movement);
+        if (Psm.Movement == Vector3.zero) {
+            Psm.SwitchState(Psm.IdleState);
         }
         else if(SprintAction.triggered){
-            psm.SwitchState(psm.SprintState);
+            Psm.SwitchState(Psm.SprintState);
         }
         else if(JumpAction.triggered){
-            psm.SwitchState(psm.JumpState);
+            Psm.SwitchState(Psm.JumpState);
         }
     }
 }
